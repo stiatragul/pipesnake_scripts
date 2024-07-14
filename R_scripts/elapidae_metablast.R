@@ -1,30 +1,8 @@
 # Metablastr reciprocal blast
 # Blast best reciprocal hit function to blast against target sequence FASTA. Identify best hit for each locus.
 
-# # install BiocManager if required
-# if (!requireNamespace("BiocManager", quietly = TRUE))
-#   install.packages("BiocManager")
-# BiocManager::install(version="3.19")
-# 
-# # install package dependencies
-BiocManager::install(
-  c(
-    "Biostrings",
-    "GenomicFeatures",
-    "GenomicRanges",
-    "Rsamtools",
-    "IRanges",
-    "rtracklayer",
-    "Biostrings")
-)
-
-
-# install.packages("devtools")
-# install the current version of metablastr on your system
-# devtools::install_github("drostlab/metablastr", build_vignettes = TRUE, dependencies = TRUE)
-
+# Load the metablastr package
 library(metablastr)
-# run blastn (nucleotide to nucleotide search) between example query and subject sequences
 
 rbh_og_vit <- blast_best_reciprocal_hit(
   query = "~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Ogmodon_vitianus_combined.fasta",
@@ -48,14 +26,13 @@ rbh_lo_ela <- blast_best_reciprocal_hit(
 
 rbh_lo_ela
 
-# exon.hits <- rbh$subject_id
-# exon.hits <- sapply(exon.hits, function(x) strsplit(x, "\\|")[[1]][5])
-# names(exon.hits) <- NULL
-# rbh$subject_id_name <- rbh$subject_id
-
+# Write the results to a CSV file
 write.csv(rbh_og_vit, file="~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/RBH_AllLoci_Ogmodon_vitianus.csv", row.names = F)
 write.csv(rbh_lo_ela, file="~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/RBH_AllLoci_Loveridgelaps_elapoides.csv", row.names = F)
 
+
+### Extract the sequences of the best reciprocal hits and write to new file
+# Load the Biostrings package
 library(Biostrings)
 # Read the FASTA file
 
