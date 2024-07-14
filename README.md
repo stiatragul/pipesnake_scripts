@@ -34,3 +34,6 @@ This pulled together what we were calling "rough" or "raw" alignments
 
 ### Bash scripts
 - `split_files.sh` - split alignment files into multiple directories (useful for running phylogeny_genetree_gen*.py on different machines).
+
+### Julia script
+- `correction_multi_aggressive.jl` - script from Janne Torkkola to trim alignments using TAPER.
