@@ -27,7 +27,7 @@ library(metablastr)
 # run blastn (nucleotide to nucleotide search) between example query and subject sequences
 
 rbh_og_vit <- blast_best_reciprocal_hit(
-  query = "~AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Ogmodon_vitianus_combined.fasta",
+  query = "~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Ogmodon_vitianus_combined.fasta",
   subject = "/home/keoghlabuser/AusARG_Proj/SqCL_Targets.fasta",
   search_type = "nucleotide_to_nucleotide",
   task = "dc-megablast",
@@ -38,7 +38,7 @@ rbh_og_vit <- blast_best_reciprocal_hit(
 rbh_og_vit
 
 rbh_lo_ela <- blast_best_reciprocal_hit(
-  query = "~AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Loveridgelaps_elapoides_combined.fasta",
+  query = "~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Loveridgelaps_elapoides_combined.fasta",
   subject = "/home/keoghlabuser/AusARG_Proj/SqCL_Targets.fasta",
   search_type = "nucleotide_to_nucleotide",
   task = "dc-megablast",
@@ -53,8 +53,8 @@ rbh_lo_ela
 # names(exon.hits) <- NULL
 # rbh$subject_id_name <- rbh$subject_id
 
-write.csv(rbh_og_vit, file="~AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/RBH_AllLoci_Ogmodon_vitianus.csv", row.names = F)
-write.csv(rbh_lo_ela, file="~AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/RBH_AllLoci_Loveridgelaps_elapoides.csv", row.names = F)
+write.csv(rbh_og_vit, file="~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/RBH_AllLoci_Ogmodon_vitianus.csv", row.names = F)
+write.csv(rbh_lo_ela, file="~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/RBH_AllLoci_Loveridgelaps_elapoides.csv", row.names = F)
 
 library(Biostrings)
 # Read the FASTA file
@@ -76,6 +76,6 @@ rbh_combinr <- function(.inputfasta, .rbh){
   
 }
 
-rbh_combinr(.inputfasta = "~AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Ogmodon_vitanus_combined.fasta", .rbh = rbh_og_vit)
-rbh_combinr(.inputfasta = "~AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Loveridgelaps_elapoides_combined.fasta", .rbh = rbh_lo_ela)
+rbh_combinr(.inputfasta = "~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Ogmodon_vitanus_combined.fasta", .rbh = rbh_og_vit)
+rbh_combinr(.inputfasta = "~/AusARG_Proj/Elapidae/All_Elapid_PRGs/All_loci/combined_samples_PRGs/Loveridgelaps_elapoides_combined.fasta", .rbh = rbh_lo_ela)
 
