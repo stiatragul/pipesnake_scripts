@@ -2,6 +2,7 @@
 # Blast best reciprocal hit function to blast against target sequence FASTA. Identify best hit for each locus.
 
 # Load the metablastr package
+
 library(metablastr)
 
 rbh_og_vit <- blast_best_reciprocal_hit(
@@ -10,6 +11,7 @@ rbh_og_vit <- blast_best_reciprocal_hit(
   search_type = "nucleotide_to_nucleotide",
   task = "dc-megablast",
   output.path = tempdir(),
+  cores = 4,
   db.import = F
 )
 
@@ -21,6 +23,7 @@ rbh_lo_ela <- blast_best_reciprocal_hit(
   search_type = "nucleotide_to_nucleotide",
   task = "dc-megablast",
   output.path = tempdir(),
+  cores = 4,
   db.import = F
 )
 
