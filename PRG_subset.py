@@ -27,7 +27,7 @@ def process_directory(input_dir, output_dir, keyword):
 
 def main():
     parser = argparse.ArgumentParser(description="Filter FASTA files for sequences containing a specific keyword in their headers.")
-    parser.add_argument("input_dir", help="Directory containing input FASTA files")
+    parser.add_argument("input_dir", help="Directory containing input full FASTA files")
     parser.add_argument("output_dir", help="Directory to save the filtered FASTA files")
     parser.add_argument("--keyword", default="AHE", help="Keyword to filter sequences by (default: 'AHE')")
     
