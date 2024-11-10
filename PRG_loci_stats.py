@@ -1,3 +1,5 @@
+# Function: Count the number of AHE, UCE, and gene headers in each fasta file in a directory and save the counts to a CSV file.
+# Putter Tiatragul w/ ChatGPT
 import os
 import sys
 import pandas as pd
