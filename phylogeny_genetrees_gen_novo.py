@@ -5,9 +5,12 @@ import subprocess
 import multiprocessing as mp
 from tqdm import tqdm
 
+# Lastest update 2024-12-21
+# Putter
+
 def get_args():
     parser = argparse.ArgumentParser(
-        description="Align, possibly trim, and infer gene trees for each loci.",
+        description="Infer gene trees for each loci.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
 
@@ -28,7 +31,7 @@ def get_args():
     return parser.parse_args()
 
 def shell_iqtree(args):
-    al_files = glob.glob(os.path.join(args.indir, '*.fasta.aln'))
+    al_files = glob.glob(os.path.join(args.indir, '*.fas'))
     commands = []
 
     for z in al_files:
